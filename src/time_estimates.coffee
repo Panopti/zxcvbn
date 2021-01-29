@@ -71,7 +71,16 @@ time_estimates =
     else
       #[null, 'centuries']
       [null, 'årtusinder']
-    display_str += 's' if display_num? and display_num != 1
+    display_str = if display_str == "#{base} dag" and display_num != 1
+        display_str + "e"
+      else if display_str == "#{base} time" and display_num != 1
+        display_str + "r"
+      else if display_str == "#{base} minut" and display_num != 1
+        display_str + "ter"
+      else if display_num? and display_num != 1 and display_str != "#{base} år"
+        display_str + "er"
+      else 
+        display_str
     display_str
 
 module.exports = time_estimates

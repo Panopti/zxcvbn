@@ -1,0 +1,19 @@
+<html>  
+    <head>
+    <script type="module" >
+        import * as zxcvbn from './zxcvbn.js';
+
+    </script>
+    </head>  
+    <body>  
+        <input id="input" type="text" oninput="input()"/>  
+        <pre id="text"></pre>    
+    </body>
+    <script>
+        function input(){
+            let text = document.getElementById("text");
+            let input = document.getElementById("input");
+            text.innerHTML = JSON.stringify(zxcvbn(input.value), undefined, 2);
+        }
+    </script> 
+</html>  

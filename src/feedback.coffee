@@ -46,7 +46,7 @@ feedback =
           'Taster på række på tastaturet er nemme at gætte'
         else
           #'Short keyboard patterns are easy to guess'
-          'Korte keyboardmønstre er nemme at gætte'
+          'Korte tastaturmønstre er nemme at gætte'
         warning: warning
         suggestions: [
           #'Use a longer keyboard pattern with more turns'
@@ -56,7 +56,7 @@ feedback =
       when 'repeat'
         warning = if match.base_token.length == 1
           #'Repeats like "aaa" are easy to guess'
-          'Gentagelse som "aaa" er nemme at gætte'
+          'Gentagelser som "aaa" er nemme at gætte'
         else
           #'Repeats like "abcabcabc" are only slightly harder to guess than "abc"'
           'Gentagelser som "abcabcabc" er kun en smule sværere end "abc"'
