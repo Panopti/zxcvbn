@@ -5,5 +5,7 @@ data
 data-scripts
 demo
 src
+dist/zxcvbn.js.map
+dist/zxcvbn.html
 test
 
