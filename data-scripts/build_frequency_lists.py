@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 import os
 import sys
 import time
@@ -29,9 +29,9 @@ passed data dir, or vice-versa.
 
 # maps dict name to num words. None value means "include all words"
 DICTIONARIES = dict(
-    us_tv_and_film    = 30000,
-    english_wikipedia = 30000,
-    passwords         = 30000,
+    us_tv_and_film    = 10000,
+    english_wikipedia = 10000,
+    passwords         = 10000,
     surnames          = 10000,
     male_names        = None,
     female_names      = None,
@@ -50,7 +50,7 @@ def parse_frequency_lists(data_dir):
         with codecs.open(os.path.join(data_dir, filename), 'r', 'utf8') as f:
             for i, line in enumerate(f):
                 rank = i + 1 # rank starts at 1
-                token = line.split()[0]
+                token = line.split()[0].lower()
                 token_to_rank[token] = rank
         freq_lists[freq_list_name] = token_to_rank
     for freq_list_name in DICTIONARIES:
